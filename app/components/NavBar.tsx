@@ -16,6 +16,7 @@ import {
 
 import { Input } from "@/components/ui/input"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import Link from "next/link"
 
 
 
@@ -36,9 +37,10 @@ function NavBar() {
       <MenubarMenu>
         <MenubarTrigger className="">Wilayat</MenubarTrigger>
         <MenubarContent>
-          <MenubarItem>
-            Undo <MenubarShortcut>⌘Z</MenubarShortcut>
-          </MenubarItem>
+        <Link href="/category">
+<MenubarItem>
+          All
+          </MenubarItem></Link>
           <MenubarItem>
             Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
           </MenubarItem>
@@ -62,6 +64,12 @@ function NavBar() {
       <MenubarMenu>
         <MenubarTrigger className="hidden lg:flex">Admin</MenubarTrigger>
       </MenubarMenu>
+      <MenubarMenu>
+        <MenubarTrigger className="hidden lg:flex">Show House</MenubarTrigger>
+      </MenubarMenu>
+
+
+      
       <MenubarMenu>
         <MenubarTrigger className="hidden lg:flex">Profiles 
         <Avatar className = "w-[30px] h-[30px] ml-2">

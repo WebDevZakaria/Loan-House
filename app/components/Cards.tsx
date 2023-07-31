@@ -15,12 +15,12 @@ function Cards() {
       <Image src={productImg} alt='' data-aos = 'fade-up' data-aos-offset ='300' className="h-[700px] rounded-2xl" />
       <div className=" absolute top-[1600px]  lg:top-[1000px]">
         <h4 className="text-[40px] text-center text-white lg:text-violet-500 ">Amazing Rooms</h4>
-      <Image src = {HOUSE3} className="w-[400px] h-[300px] rounded-2xl mx-10 " />
+      <Image src = {HOUSE3} className="w-[400px] h-[300px] rounded-2xl mx-10 " alt="" />
       </div>
 
       <div className=" absolute  lg:top-[1300px]">
         <h4 className="text-[40px] text-center ml-[380px] text-white ">Full Show </h4>
-      <Image src = {HOUSE4} className="w-[400px] h-[300px] rounded-2xl mx-[1150px] " />
+      <Image src = {HOUSE4} className="w-[400px] h-[300px] rounded-2xl mx-[1150px] " alt="" />
       </div>
       
 
