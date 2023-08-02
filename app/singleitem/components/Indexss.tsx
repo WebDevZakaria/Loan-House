@@ -9,9 +9,11 @@ import {
     CardTitle,
   } from "@/components/ui/card"
 
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 import CardItem from "./CardItem"
-
+import ControlledOpenSelect from "./ControlledOpenSelect"
 
 
 function Indexss() {
@@ -19,17 +21,27 @@ function Indexss() {
     <section className="min-h-[1800px] lg:min-h-[1600px] ">
       <div className="lg:flex">
 
-      <div className="relative top-[700px] lg:top-[170px] ml-20 " >
+      <div className="relative top-[100px] lg:top-[170px] ml-20 " >
 
       <CardItem />
 
     </div>
 
         <div>
-  <Card className="w-[450px] mt-40 mx-8  h-[300px] lg:h-[900px]">
+  <Card className="w-[350px] mt-40 ml-[100px]  lg:mx-8  h-[270px] lg:h-[350px] lg:fixed">
       <CardHeader> 
-        <CardTitle className="text-center">Select  wilaya</CardTitle>
-        <CardDescription className="text-center">Select the Wilaya and Choose the house you need</CardDescription>
+        <CardTitle className="text-center">Order Now</CardTitle>
+        <CardDescription className="text-center">Select How Many Months You Wnat To load</CardDescription>
+        <ControlledOpenSelect />
+
+        <Stack direction="row" spacing={2} className="ml-[100px]">
+          
+        <Button variant="contained" color="success">
+        Order Now
+      </Button>
+      
+    </Stack>
+
       </CardHeader>
     
     </Card>
