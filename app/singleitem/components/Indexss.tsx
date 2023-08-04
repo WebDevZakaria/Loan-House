@@ -15,6 +15,8 @@ import Button from '@mui/material/Button';
 import CardItem from "./CardItem"
 import ControlledOpenSelect from "./ControlledOpenSelect"
 
+import Link from "next/link";
+
 
 function Indexss() {
   return (
@@ -36,9 +38,12 @@ function Indexss() {
 
         <Stack direction="row" spacing={2} className="ml-[100px]">
           
-        <Button variant="contained" color="success">
+       <Link href = '/shiping'> <Button variant="contained" color="success">
         Order Now
       </Button>
+      </Link>
+      
+
       
     </Stack>
 
