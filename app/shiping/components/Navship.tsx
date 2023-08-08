@@ -34,6 +34,7 @@ import CreateSvgIcon from "./CreateSvgIcon"
 
 import { UilLocationPoint } from '@iconscout/react-unicons'
 import { UilUserCircle } from '@iconscout/react-unicons'
+import Link from "next/link"
 
 function Navship() {
 
@@ -90,7 +91,7 @@ function Navship() {
       </CardContent>
       <CardFooter className="flex justify-between">
         <Button variant="outline">Cancel</Button>
-        <Button>Submit</Button>
+        <Link href = "/ordered"><Button>Submit</Button></Link>
       </CardFooter>
     </Card>
 
@@ -106,7 +107,7 @@ function Navship() {
         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
 
     <ListItem>
-      
+
       <ListItemAvatar>
         <Avatar>
           <UilLocationPoint />

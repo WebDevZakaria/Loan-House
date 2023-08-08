@@ -17,7 +17,8 @@ import {
 import { Input } from "@/components/ui/input"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import Link from "next/link"
-
+import { Login } from "./Login"
+import { Register } from "./Register"
 
 
 function NavBar() {
@@ -91,10 +92,10 @@ function NavBar() {
       </MenubarMenu>
 
       <MenubarMenu>
-        <MenubarTrigger>Register</MenubarTrigger>
+        <MenubarTrigger> <Register /> </MenubarTrigger>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>Login</MenubarTrigger>
+        <MenubarTrigger> <Login /> </MenubarTrigger>
      
       </MenubarMenu>
     </Menubar>

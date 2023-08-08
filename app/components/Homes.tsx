@@ -4,6 +4,7 @@ import HOUSE1 from '../../public/assets/house1.svg'
 
 import Image from 'next/image';
 
+import Link from "next/link";
 
 
 function Homes() {
@@ -18,7 +19,7 @@ function Homes() {
             </p>
             <div className="  lg:space-x-10">
             <Button className="mb-8">Register Now </Button>
-            <Button className="bg-yellow-300 w-[180px]" >Search For House</Button>
+            <Link href='/category'><Button className="bg-yellow-300 w-[180px]" >Search For House</Button></Link>
             </div>
           </div>
           <div className="mx-[200px] w-[200px] mt-[10px] lg:w-[600px] lg:my-[170px] ">

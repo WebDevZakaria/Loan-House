@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-
-
-module.exports =  {
+module.exports = {
   darkMode: ["class"],
   content: [
     './pages/**/*.{ts,tsx}',
@@ -16,9 +14,6 @@ module.exports =  {
       screens: {
         "2xl": "1400px",
       },
-    },
-    backgroundImage: {
-      overview: "url('/public/assets/bg.svg')",
     },
     extend: {
       colors: {
