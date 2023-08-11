@@ -33,7 +33,7 @@ function NavBar() {
 <div className="  mx-[300px] w-[255px] lg:mx-[1000px] lg:w-[775px]">
 <Menubar className="mt-2 ">
       <MenubarMenu>
-        <MenubarTrigger className="lg:pl-20 hidden lg:flex ">Home</MenubarTrigger>
+        <Link href='/'><MenubarTrigger className="lg:pl-20 hidden lg:flex ">Home</MenubarTrigger></Link>
       </MenubarMenu>
       <MenubarMenu>
         <MenubarTrigger className="">Wilayat</MenubarTrigger>
@@ -63,7 +63,7 @@ function NavBar() {
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger className="hidden lg:flex">Admin</MenubarTrigger>
+      <Link  href = "/dashboard"><MenubarTrigger className="hidden lg:flex">Admin</MenubarTrigger></Link>
       </MenubarMenu>
       <MenubarMenu>
         <MenubarTrigger className="hidden lg:flex">Show House</MenubarTrigger>
