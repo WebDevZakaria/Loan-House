@@ -7,33 +7,46 @@ import Typography from '@mui/material/Typography';
 import HOUSE5 from '../../../public/assets/room.jpg';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ItemCardType } from './Searchbar';
 
 
-function CardCat() {
+interface Props {
+
+  house:ItemCardType;
+
+
+}
+
+
+
+function CardCat({house}:Props) {
+
 
   return (
     <div>
-        <div className='flex'>
-        <div className='flex mb-8'>
+        <div className=''>
+        <div className=''>
+        <Link href={`/singleitem/${house.slug}`}>
        <Card sx={{ maxWidth: 345 }} className='mr-8'>
       <CardMedia
         
       ><Image src = {HOUSE5} alt='' /></CardMedia>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+          {house.name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          {house.description}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
+        <Button size="small">Loan Now</Button>
         <Link href="/singleitem"><Button size="small">Learn More</Button></Link>
       </CardActions>
     </Card>
+    </Link>  
     </div>
+    {/* 
     <div>
     <Card sx={{ maxWidth: 345 }} className='mr-8'>
       <CardMedia
@@ -216,11 +229,10 @@ function CardCat() {
     </div>
 
     
-    
+    */}
 
     
-    
-    
+  </div>   
     </div>
   )
 }

@@ -16,16 +16,17 @@ import CardItem from "./CardItem"
 import ControlledOpenSelect from "./ControlledOpenSelect"
 
 import Link from "next/link";
+import { Houses } from "@prisma/client";
 
 
-function Indexss() {
+function Indexss({house,description,loaningprice}:{house:string,description:string,loaningprice:number}) {
   return (
     <section className="min-h-[1800px] lg:min-h-[1600px] ">
       <div className="lg:flex">
 
       <div className="relative top-[100px] lg:top-[170px] ml-20 " >
 
-      <CardItem />
+      <CardItem house = {house} description = {description} />
 
     </div>
 

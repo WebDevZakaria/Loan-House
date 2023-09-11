@@ -25,6 +25,16 @@ import Rating from '@mui/material/Rating';
 
 import { Button as Button1 } from "@/components/ui/button"
 
+import { ItemCardType } from '../page';
+
+interface Props {
+
+  house:ItemCardType;
+
+
+}
+
+
 
 
 
@@ -97,15 +107,7 @@ const ExpandMores4 = styled((props: ExpandMorePropss4) => {
 
 
 
-
-
-
-
-
-
-
-
-function Items() {
+function Items({house}: Props) {
     const [expanded, setExpanded] = React.useState(false);
     const [expanded2, setExpanded2] = React.useState(false);
     const [expanded3, setExpanded3] = React.useState(false);
@@ -132,8 +134,8 @@ function Items() {
 
   return (
     <section className='min-h-[450px] lg:min-h-[715px]'>
-      <h2 className='text-center mb-16 text-[30px]'>Most Popular Houses </h2>
-      <div className='flex   flex-col lg:flex-row space-x-6 mx-[140px]'>
+    
+      <div className=''>
         
        <Card sx={{ maxWidth: 345 }} className='mb-8'>
       <CardHeader
@@ -147,22 +149,31 @@ function Items() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={house.name}
+        subheader ={house.slug}
+
       />
+      
       <Image src={HOUSE3}
         height="194"
         alt="Paella dish"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+  
+  {house.description}
+        </Typography>
+      </CardContent>
+
+      <CardContent>
+        <Typography variant="body2" color="text.secondary">
+  
+  LoaningPrice :{house.loaning_price} DA  a year
         </Typography>
       </CardContent>
 
       <Rating name="half-rating-read" defaultValue={2.5} precision={0.5} readOnly className='pl-20' />
+
 
       <CardActions disableSpacing>
       <Button size="small">Contact Owner</Button>
@@ -201,14 +212,14 @@ function Items() {
             stirring, until mussels have opened and rice is just tender, 5 to 7
             minutes more. (Discard any mussels that don&apos;t open.)
           </Typography>
-          <Typography>
+           <Typography>
             Set aside off of the heat to let rest for 10 minutes, and then serve.
           </Typography>
         </CardContent>
       </Collapse>
     </Card>
-
-
+    
+{/* 
     <Card sx={{ maxWidth: 345 }} className='mb-8' >
       <CardHeader
         avatar={
@@ -354,6 +365,7 @@ function Items() {
 
 
     <Card sx={{ maxWidth: 345 }} className='mb-8'>
+    
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -424,9 +436,8 @@ function Items() {
       </Collapse>
     </Card>
 
-
+*/}
     </div>    
-    <Button1 className='mx-[180px] mb-8 lg:mx-[780px] w-[200px]'> Show All </Button1>
 
       
 

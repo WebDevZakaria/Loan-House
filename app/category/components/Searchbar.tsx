@@ -14,11 +14,53 @@ import CardCat from "./CardCat"
 
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import { PrismaClient,Baladiya } from "@prisma/client"
+
+const prisma = new PrismaClient()
+
+export interface ItemCardType{
+
+  id:number;
+  name:string;
+  main_image:string;
+  description:string,
+  loaning_price:number,
+  slug:string,
+  baladiya:Baladiya,
+}
+
+
+
+const fetchHouse = async ():Promise<ItemCardType[]> =>{
+
+  const houses = await prisma.houses.findMany({
+  
+  select : {
+
+    id:true,
+    name:true,
+    main_image:true,
+    description:true,
+    baladiya:true,
+    loaning_price:true,
+    slug:true,
+    
+
+   
+
+  }}
+  )
+
+  return houses
+  
+}
 
 
 
 
-function Searchbar() {
+export default async function Searchbar() {
+  const houses = await fetchHouse() 
+
   return (
     <section className="min-h-[1800px] lg:min-h-[1600px] ">
       <div className="  lg:flex">
@@ -36,8 +78,13 @@ function Searchbar() {
       </div>
     </Card>
     </div>
-    <div className="relative top-[700px] lg:top-[170px] ml-20 " >
-      <CardCat />
+    <div className="relative top-[700px] lg:top-[170px] ml-20  mb-8 p-3 grid grid-cols-3 gap-3 " >
+    {houses.map((house)=>(
+          <CardCat house = {house} key={house.id} />
+        ))}
+       
+     
+
     </div>
 
     </div>
@@ -51,4 +98,3 @@ function Searchbar() {
   )
 }
 
-export default Searchbar

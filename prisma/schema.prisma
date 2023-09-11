@@ -1,0 +1,64 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model Houses {
+    id            Int      @id @default(autoincrement())
+    name          String
+    main_image    String
+    images        String[]
+    description   String
+    loaning_price Float
+    open_time     String
+    close_time    String
+
+    slug  String @unique
+
+    baladiya_id Int
+    baladiya    Baladiya @relation(fields: [baladiya_id], references: [id])
+
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+}
+
+
+model Wilaya {
+    id       Int        @id @default(autoincrement())
+    name     String
+    Baladiya Baladiya[]
+
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+}
+
+model Baladiya {
+    id     Int      @id @default(autoincrement())
+    name   String
+    Houses Houses[]
+
+    wilaya_id Int
+    wilaya    Wilaya @relation(fields: [wilaya_id], references: [id])
+
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+}
+
+model User {
+    id         Int      @id @default(autoincrement())
+    first_name String
+    last_name  String
+    city       String
+    password   String
+    email      String   @unique
+    phone      String
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+}
