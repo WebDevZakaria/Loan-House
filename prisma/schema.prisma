@@ -2,15 +2,21 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
+
     provider = "prisma-client-js"
+
 }
 
 datasource db {
+
     provider = "postgresql"
     url      = env("DATABASE_URL")
+
 }
 
+
 model Houses {
+
     id            Int      @id @default(autoincrement())
     name          String
     main_image    String
@@ -19,7 +25,6 @@ model Houses {
     loaning_price Float
     open_time     String
     close_time    String
-
     slug  String @unique
 
     baladiya_id Int
@@ -27,19 +32,23 @@ model Houses {
 
     created_at DateTime @default(now())
     updated_at DateTime @updatedAt
+    
 }
 
 
 model Wilaya {
+
     id       Int        @id @default(autoincrement())
     name     String
     Baladiya Baladiya[]
 
     created_at DateTime @default(now())
     updated_at DateTime @updatedAt
+
 }
 
 model Baladiya {
+
     id     Int      @id @default(autoincrement())
     name   String
     Houses Houses[]
@@ -49,9 +58,11 @@ model Baladiya {
 
     created_at DateTime @default(now())
     updated_at DateTime @updatedAt
+
 }
 
 model User {
+
     id         Int      @id @default(autoincrement())
     first_name String
     last_name  String
@@ -61,4 +72,8 @@ model User {
     phone      String
     created_at DateTime @default(now())
     updated_at DateTime @updatedAt
+
 }
+
+
+

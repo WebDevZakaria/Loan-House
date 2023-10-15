@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/card"
 
 import Link from "next/link"
-import { UilFeedback } from '@iconscout/react-unicons'
+//import { UilFeedback } from '@iconscout/react-unicons'
 function Submitted() {
   return (
     <section>
@@ -26,7 +26,7 @@ function Submitted() {
             YOur Request Have Been Submitted , Keep Your Phone On and Keep Eye ON Your email You will be contacted Soon.
        
            
-           <div className="mx-[240px]">  <UilFeedback   /> </div>
+           <div className="mx-[240px]">   </div>
           </div>
 
           <div className="grid w-full items-center gap-4 mt-8">

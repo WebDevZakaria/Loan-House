@@ -32,8 +32,8 @@ import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 
 import CreateSvgIcon from "./CreateSvgIcon"
 
-import { UilLocationPoint } from '@iconscout/react-unicons'
-import { UilUserCircle } from '@iconscout/react-unicons'
+//import { UilLocationPoint } from '@iconscout/react-unicons'
+//import { UilUserCircle } from '@iconscout/react-unicons'
 import Link from "next/link"
 
 function Navship() {
@@ -110,7 +110,7 @@ function Navship() {
 
       <ListItemAvatar>
         <Avatar>
-          <UilLocationPoint />
+          
         </Avatar>
       </ListItemAvatar>
       <ListItemText primary="Guelma" secondary="Nouvelle ville" />
@@ -126,7 +126,7 @@ function Navship() {
     <ListItem>
       <ListItemAvatar>
         <Avatar>
-          <UilUserCircle />
+          
         </Avatar>
       </ListItemAvatar>
       <ListItemText primary="Zakaria Bour" secondary="Guelma" />

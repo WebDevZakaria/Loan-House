@@ -34,11 +34,8 @@ const fetchHouse = async ():Promise<ItemCardType[]> =>{
     baladiya:true,
     loaning_price:true,
     slug:true,
-    
-
-   
-
   }}
+
   )
 
   return houses

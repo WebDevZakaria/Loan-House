@@ -26,13 +26,70 @@ import {
   import { Input } from "@/components/ui/input"
   import { Label } from "@/components/ui/label"
 
-  import { UilGithub } from '@iconscout/react-unicons'
-  import { UilGoogle } from '@iconscout/react-unicons'
-  export function Login() {
+  //import { UilGithub } from '@iconscout/react-unicons'
+  //import { UilGoogle } from '@iconscout/react-unicons'
+
+  import useAuth from "@/hooks/useAuth"
+  import { AuthenticationssContext } from "../context/AuthContext"
+  import { useState,useEffect ,useContext} from "react"
+  import { Alert, CircularProgress } from '@mui/material';
+
+  export default function Login() {
+
+
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+  
+  
+      const { signin ,signout} = useAuth()
+      const { loading, data , error } = useContext(AuthenticationssContext)
+  
+      const renderContent = (signinContent:string) => {
+  
+        return signinContent
+        
+      }
+    
+  
+      const handleChangeIput = (e: React.ChangeEvent<HTMLInputElement>) =>{
+  
+    setInputs(
+      {
+        ...inputs,
+        [e.target.name]:e.target.value
+      }
+    )
+  
+  }
+  
+  const [inputs,setInputs] = useState ({
+
+    email:"",
+   
+    password:""
+  
+  })
+  
+  
+  
+  
+  
+  
+  const HandleClick = () =>{
+  
+    signin(inputs, handleClose)
+
+    
+  
+  }
+  
+
+
     return (
       <AlertDialog>
         <AlertDialogTrigger asChild>
-          <Btnn variant="outline">Login</Btnn>
+          {data ? <Button onClick={signout} variant="outline">Logout</Button>:  <Btnn variant="outline">Login</Btnn>}
         </AlertDialogTrigger>
         <AlertDialogContent>
         <Card>
@@ -45,15 +102,16 @@ import {
       <CardContent className="grid gap-4">
         <div className="grid grid-cols-2 gap-6">
           <Button variant="outline">
-          <UilGithub className="mr-2 h-4 w-4"/>
+          
             Github
           </Button>
           <Button variant="outline">
-           <UilGoogle className="mr-2 h-4 w-4" />
+           
             Google
           </Button>
         </div>
-        
+
+
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
             <span className="w-full border-t" />
@@ -66,18 +124,24 @@ import {
         </div>
         <div className="grid gap-2">
           <Label htmlFor="email">Email</Label>
-          <Input id="email" type="email" placeholder="m@example.com" />
+          <Input id="email" type="email" placeholder="m@example.com" value ={inputs.email} onChange={handleChangeIput} name="email" />
         </div>
+
         <div className="grid gap-2">
+
           <Label htmlFor="password">Password</Label>
-          <Input id="password" type="password" />
+          <Input id="password" type="password" value ={inputs.password} onChange={handleChangeIput} name="password" />
+
         </div>
+
       </CardContent>
-      
+
     </Card>
     <AlertDialogFooter>
+
           <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction>Login</AlertDialogAction>
+          <button onClick={HandleClick}><AlertDialogAction>Login</AlertDialogAction></button>
+
         </AlertDialogFooter>
 
 

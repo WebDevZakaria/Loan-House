@@ -17,8 +17,9 @@ import {
 import { Input } from "@/components/ui/input"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import Link from "next/link"
-import { Login } from "./Login"
+//import { Login } from "./Login"
 import Register from "./Register"
+import Login from "./Login"
 
 
 
@@ -81,9 +82,9 @@ function NavBar() {
         </MenubarTrigger>
         <MenubarContent>
           <MenubarRadioGroup value="benoit">
-            <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
-            <MenubarRadioItem value="benoit">Benoit</MenubarRadioItem>
-            <MenubarRadioItem value="Luis">Luis</MenubarRadioItem>
+            <Link href="/addhouse"><MenubarRadioItem value="andy">Add House For Loaning</MenubarRadioItem></Link>
+            <MenubarRadioItem value="benoit">xxxx</MenubarRadioItem>
+            <MenubarRadioItem value="Luis">xxxx</MenubarRadioItem>
           </MenubarRadioGroup>
           <MenubarSeparator />
           <MenubarItem inset>Edit...</MenubarItem>

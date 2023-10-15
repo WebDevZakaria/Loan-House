@@ -27,8 +27,8 @@ import {
   import { Input } from "@/components/ui/input"
   import { Label } from "@/components/ui/label"
 
-import { UilGithub } from '@iconscout/react-unicons'
-import { UilGoogle } from '@iconscout/react-unicons'
+//import { UilGithub } from '@iconscout/react-unicons'
+//import { UilGoogle } from '@iconscout/react-unicons'
 
 import useAuth from "@/hooks/useAuth"
 import { AuthenticationssContext } from "../context/AuthContext"
@@ -104,11 +104,11 @@ const HandleClick = () =>{
       <CardContent className="grid gap-4">
         <div className="grid grid-cols-2 gap-6">
           <Button variant="outline">
-          <UilGithub className="mr-2 h-4 w-4"/>
+          
             Github
           </Button>
           <Button variant="outline">
-           <UilGoogle className="mr-2 h-4 w-4" />
+           
             Google
           </Button>
         </div>
